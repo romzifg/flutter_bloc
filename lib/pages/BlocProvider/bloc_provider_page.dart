@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_flutter_bloc/bloc/counter.dart';
 import 'package:learn_flutter_bloc/pages/BlocProvider/data_widget.dart';
+import 'package:learn_flutter_bloc/pages/Other/other.dart';
 
 class BlocProviderPage extends StatelessWidget {
   @override
@@ -11,6 +12,19 @@ class BlocProviderPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Bloc Provider"),
         centerTitle: true,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => BlocProvider.value(
+                value: myCounter,
+                child: const OtherPage(),
+              ),
+            ),
+          );
+        },
+        child: const Icon(Icons.arrow_forward),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
