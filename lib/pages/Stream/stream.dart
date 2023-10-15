@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class StreamPage extends StatelessWidget {
+  const StreamPage({super.key});
 
   Stream<int> countStream() async* {
     for (int i = 1; i <= 10; i++) {

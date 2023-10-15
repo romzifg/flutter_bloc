@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_flutter_bloc/BlocBuilderPage/bloc/counter.dart';
+import 'package:learn_flutter_bloc/bloc/counter.dart';
 
 class BlocBuilderPage extends StatelessWidget {
   Counter myCounter = Counter();
