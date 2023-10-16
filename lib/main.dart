@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_flutter_bloc/bloc/counter.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:learn_flutter_bloc/bloc/counter.dart';
+// import 'package:learn_flutter_bloc/bloc/user.dart';
 import 'package:learn_flutter_bloc/bloc/theme.dart';
-import 'package:learn_flutter_bloc/bloc/user.dart';
-import 'package:learn_flutter_bloc/pages/BlocProvider/bloc_provider_page.dart';
-import 'package:learn_flutter_bloc/pages/BlocSelector/bloc_selector_page.dart';
+import 'package:learn_flutter_bloc/pages/ExtensionMethod/extension_method_page.dart';
 import 'package:learn_flutter_bloc/routes/routes.dart';
+// import 'package:learn_flutter_bloc/pages/BlocProvider/bloc_provider_page.dart';
+// import 'package:learn_flutter_bloc/pages/BlocSelector/bloc_selector_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,10 +23,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: BlocProvider(
-      create: (context) => UserBloc(),
-      child: const BlocSelectorPage(),
-    ));
+      home: BlocProvider<Counter>(
+        create: (context) => Counter(),
+        child: const ExtensionMethodPage(),
+      ),
+    );
+    // return MaterialApp(
+    //     home: BlocProvider(
+    //   create: (context) => UserBloc(),
+    //   child: const BlocSelectorPage(),
+    // ));
 
     // return MultiBlocProvider(
     //   providers: [
